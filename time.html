@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>How long</h2>
+    <label for="">ep</label>
+    <input type="text" name="ep" id="ep" />
+    <label for="">time</label>
+    <input type="text" name="time" id="time" />
+    <button class="btn" onclick="getTime()">submit</button>
+    <p class="result"></p>
+    <script>
+      // 30ep
+      // ep = 30 min
+      // how long does it take??
+      const btn = document.querySelector(".btn");
+      const ep = document.querySelector("#ep").value;
+      const time = document.querySelector("#time").value;
+      function getTime() {
+        let result = `${ep / (60 / time)} hours`;
+        const show = document.querySelector(".result");
+        const times = (ep / (60 / time)).toFixed(1);
+        show.innerHTML = Math.floor(parseFloat(result));
+        // show.innerHTML = `${times} hours`;
+        // console.log(times);
+      }
+    </script>
+  </body>
+</html>
